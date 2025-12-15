@@ -107,7 +107,7 @@
     <div class="header-banner">
         <div class="container">
             <h1 class="fw-bold"><i class="fa-solid fa-bicycle me-3"></i>Strategic Cycling Calendar</h1>
-            <p class="lead mb-0 opacity-90">Operational Roadmap: USA, Romania & Key International Events (2025 – 2027)</p>
+            <p class="lead mb-0 opacity-90">Operational Roadmap: USA, Southeast/FL, Romania & International (2025 – 2027)</p>
         </div>
     </div>
 
@@ -126,7 +126,9 @@
                     <label class="form-label fw-bold text-secondary small">REGION</label>
                     <select id="regionFilter" class="form-select" onchange="filterEvents()">
                         <option value="all">All Regions</option>
-                        <option value="USA">🇺🇸 United States</option>
+                        <option value="USA">🇺🇸 USA (All)</option>
+                        <option value="North Florida">🇺🇸 USA - North Florida</option>
+                        <option value="Southeast">🇺🇸 USA - Southeast (GA/AL/NC/SC/TN)</option>
                         <option value="Romania">🇷🇴 Romania</option>
                         <option value="Europe">🇪🇺 Europe / International</option>
                     </select>
@@ -169,7 +171,7 @@
         </div>
 
         <footer>
-            <p>Data compiled from Strategic Horizon Analysis (Dec 15, 2025).<br>
+            <p>Data compiled from Strategic Horizon Analysis & Regional Race Guides (Dec 15, 2025).<br>
             <em>Dates for late 2026/2027 are projected based on historical patterns where confirmed data is unavailable.</em></p>
         </footer>
     </div>
@@ -181,69 +183,147 @@
             { name: "Best Buddies Challenge: Malibu", date: "2025-12-02", displayDate: "Dec 2-6, 2025", location: "Malibu, CA", region: "USA", theme: "Charity", cost: "Fundraising", url: "https://bestbuddieschallenge.org" },
 
             // 2026 Q1
+            { name: "El Lagarto (FLE #1)", date: "2026-01-04", displayDate: "Jan 4-5, 2026", location: "Lakeland, FL", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "http://goneriding.com" },
             { name: "CES 2026", date: "2026-01-06", displayDate: "Jan 6-9, 2026", location: "Las Vegas, NV", region: "USA", theme: "Industry", cost: "Trade Only", url: "https://ces.tech" },
             { name: "Romanian CX Nationals", date: "2026-01-11", displayDate: "Jan 11, 2026", location: "Floresti, Romania", region: "Romania", theme: "Road", cost: "Spectator Free", url: "https://federatiadeciclism.ro" },
+            { name: "Tour de Felasco", date: "2026-01-11", displayDate: "Jan 11, 2026 (Est)", location: "Alachua, FL", region: "North Florida", theme: "Gravel", cost: "Entry Fee", url: "https://www.sanfelasco.org" },
+            { name: "Winter Short Track Series", date: "2026-01-18", displayDate: "Jan 18 - Feb 15, 2026", location: "Charlotte, NC", region: "Southeast", theme: "MTB", cost: "$115 Series", url: "https://wintershorttrack.raceroster.com" },
+            { name: "Swamp Classic", date: "2026-01-31", displayDate: "Jan 31-Feb 1, 2026", location: "Gainesville, FL", region: "North Florida", theme: "Road", cost: "$45", url: "https://usacycling.org" },
+            { name: "FGG #1 (FL Gravel Champ)", date: "2026-01-31", displayDate: "Jan 31-Feb 1, 2026", location: "Bryceville, FL", region: "North Florida", theme: "Gravel", cost: "$50-80", url: "http://goneriding.com" },
+            { name: "Assault on Currahee Mtn", date: "2026-01-31", displayDate: "Jan 31, 2026", location: "Mount Airy, GA", region: "Southeast", theme: "Gravel", cost: "Entry Fee", url: "#" },
+            
+            // Feb 2026
             { name: "Old Man Winter Rally", date: "2026-02-01", displayDate: "Feb 1, 2026", location: "Lyons, CO", region: "USA", theme: "Gravel", cost: "Entry Fee", url: "https://oldmanwinterrally.com" },
+            { name: "Markham Masher (FLE #2)", date: "2026-02-01", displayDate: "Feb 1-2, 2026", location: "Lake Mary, FL", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "http://goneriding.com" },
             { name: "CABDA Midwest", date: "2026-02-04", displayDate: "Feb 4-5, 2026", location: "Schaumburg, IL", region: "USA", theme: "Industry", cost: "Free (Retailers)", url: "https://cabdashow.com" },
+            { name: "Thomasville Clay Road Classic", date: "2026-02-07", displayDate: "Feb 7, 2026", location: "Thomasville, GA", region: "Southeast", theme: "Gravel", cost: "Entry Fee", url: "#" },
             { name: "Tour de Palm Springs", date: "2026-02-07", displayDate: "Feb 7, 2026", location: "Palm Springs, CA", region: "USA", theme: "Charity", cost: "Entry Fee", url: "https://tourdepalmsprings.com" },
             { name: "Valley of the Sun Stage Race", date: "2026-02-13", displayDate: "Feb 13-15, 2026", location: "Phoenix, AZ", region: "USA", theme: "Road", cost: "Race Fee", url: "http://valleyofthesunbikerace.com/" },
+            { name: "12 Hours of Santos", date: "2026-02-15", displayDate: "Feb 15, 2026", location: "Ocala, FL", region: "North Florida", theme: "MTB", cost: "Entry Fee", url: "http://goneriding.com" },
+            { name: "FGG #2 (FL Gravel)", date: "2026-02-15", displayDate: "Feb 15, 2026", location: "Eustis, FL", region: "North Florida", theme: "Gravel", cost: "Entry Fee", url: "http://goneriding.com" },
+            { name: "Hincapie Spring Series", date: "2026-02-15", displayDate: "Feb 15 - Mar 2, 2026", location: "Greenville, SC", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "https://hincapie.com" },
+            { name: "Giro d'Italia Ride Like a Pro", date: "2026-02-21", displayDate: "Feb 21-22, 2026", location: "Doral, FL", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "#" },
+            { name: "Oak Mountain 6/3 Hour", date: "2026-02-21", displayDate: "Feb 21, 2026", location: "Pelham, AL", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "https://chainbusterracing.com" },
             { name: "Belgian Waffle Ride AZ", date: "2026-02-27", displayDate: "Feb 27-28, 2026", location: "Phoenix, AZ", region: "USA", theme: "Gravel", cost: "Race Fee", url: "https://belgianwaffleride.bike" },
             { name: "Send It South", date: "2026-02-27", displayDate: "Feb 27-28, 2026", location: "Bentonville, AR", region: "USA", theme: "MTB", cost: "$75", url: "https://themomentary.org" },
+            { name: "Homegrown Gravel", date: "2026-02-28", displayDate: "Feb 28, 2026", location: "Franklin, GA", region: "Southeast", theme: "Gravel", cost: "Entry Fee", url: "#" },
+            { name: "The Bomb 100", date: "2026-02-28", displayDate: "Feb 2026", location: "Pierson, FL", region: "North Florida", theme: "Gravel", cost: "Entry Fee", url: "https://thebomb100.com" },
 
             // March 2026
+            { name: "Bill Bone Criterium", date: "2026-03-01", displayDate: "Mar 1, 2026", location: "West Palm Beach, FL", region: "Southeast", theme: "Road", cost: "~$50", url: "https://billbone.com" },
+            { name: "Santos Fat Tire Festival", date: "2026-03-05", displayDate: "Mar 5-8, 2026", location: "Ocala, FL", region: "North Florida", theme: "MTB", cost: "Entry Fee", url: "https://santosfattire.com" },
+            { name: "Southern Cross Gravel", date: "2026-03-07", displayDate: "Mar 7, 2026", location: "Dahlonega, GA", region: "Southeast", theme: "Gravel", cost: "Entry Fee", url: "http://mountaingoatadventures.com" },
+            { name: "FGG #3 (FL Gravel)", date: "2026-03-08", displayDate: "Mar 8, 2026", location: "Palm Bay, FL", region: "Southeast", theme: "Gravel", cost: "Entry Fee", url: "http://goneriding.com" },
+            { name: "Hell of the NorFla", date: "2026-03-08", displayDate: "Mar 8, 2026", location: "Newberry, FL", region: "North Florida", theme: "Gravel", cost: "Entry Fee", url: "#" },
             { name: "The Mid South", date: "2026-03-13", displayDate: "Mar 13-14, 2026", location: "Stillwater, OK", region: "USA", theme: "Gravel", cost: "Race Fee", url: "https://midsouthgravel.com" },
+            { name: "Cycle to the Beach", date: "2026-03-14", displayDate: "Mar 14, 2026", location: "Palm Coast, FL", region: "North Florida", theme: "Road", cost: "Entry Fee", url: "#" },
+            { name: "Old School 6/3 Hour", date: "2026-03-14", displayDate: "Mar 14, 2026", location: "Watkinsville, GA", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "#" },
             { name: "Philly Bike Expo", date: "2026-03-14", displayDate: "Mar 14-15, 2026", location: "Philadelphia, PA", region: "USA", theme: "Industry", cost: "$25 - $35", url: "https://phillybikeexpo.com" },
+            { name: "Hialeah Hustle", date: "2026-03-16", displayDate: "Mar 16, 2026", location: "Hialeah, FL", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "http://goneriding.com" },
             { name: "Bicycle Leadership Conference", date: "2026-03-17", displayDate: "Mar 17-19, 2026", location: "Dana Point, CA", region: "USA", theme: "Industry", cost: "$1,900+", url: "https://bicycleleadershipconference.org" },
             { name: "CABDA West", date: "2026-03-18", displayDate: "Mar 18-19, 2026", location: "Las Vegas, NV", region: "USA", theme: "Industry", cost: "Free (Retailers)", url: "https://cabdashow.com" },
             { name: "USA Cycling Mechanics Clinic", date: "2026-03-20", displayDate: "Mar 20-24, 2026", location: "Bentonville, AR", region: "USA", theme: "Education", cost: "$599", url: "https://usacycling.org/mechanics/clinic" },
+            { name: "Swamp Fox Gravel Fondo", date: "2026-03-21", displayDate: "Mar 21, 2026", location: "Huger, SC", region: "Southeast", theme: "Gravel", cost: "Entry Fee", url: "https://mtpleasantvelo.org" },
+            { name: "Outdoor Capital Classic", date: "2026-03-21", displayDate: "Mar 21-22, 2026", location: "Jackson, GA", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "http://topviewsports.com" },
+            { name: "Gran Fondo Florida", date: "2026-03-22", displayDate: "Mar 22, 2026", location: "Dade City, FL", region: "Southeast", theme: "Road", cost: "$160-200", url: "https://granfondonationalseries.com" },
+            { name: "Hammer Head (FLE #5)", date: "2026-03-23", displayDate: "Mar 23, 2026", location: "Ocala, FL", region: "North Florida", theme: "MTB", cost: "Entry Fee", url: "http://goneriding.com" },
             { name: "National Bike Summit", date: "2026-03-24", displayDate: "Mar 24-26, 2026", location: "Washington, DC", region: "USA", theme: "Industry", cost: "Registration Req", url: "https://bikeleague.org" },
+            { name: "Holly Shelter Gravel", date: "2026-03-28", displayDate: "Mar 28, 2026", location: "Rocky Point, NC", region: "Southeast", theme: "Gravel", cost: "$75-95", url: "#" },
+            { name: "Gainesville Cycling Festival", date: "2026-03-28", displayDate: "Mar 28-29, 2026", location: "Gainesville, FL", region: "North Florida", theme: "Road", cost: "Entry Fee", url: "#" },
+            { name: "FGG #4 (FL Gravel)", date: "2026-03-29", displayDate: "Mar 29, 2026", location: "Ormond Beach, FL", region: "North Florida", theme: "Gravel", cost: "Entry Fee", url: "http://goneriding.com" },
             { name: "Salonul Bicicletei", date: "2026-03-31", displayDate: "Late Mar 2026", location: "Bucharest, Romania", region: "Romania", theme: "Industry", cost: "Ticketed", url: "https://www.facebook.com/salonulbicicletei/" },
 
-            // Q2 2026
+            // --- Q2 2026 ---
             { name: "Ziua B", date: "2026-04-04", displayDate: "Apr 4, 2026", location: "Bucharest, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "https://ridersclub.ro" },
+            { name: "Wild Chicken 100", date: "2026-04-04", displayDate: "Apr 4, 2026", location: "Fitzgerald, GA", region: "Southeast", theme: "Gravel", cost: "Entry Fee", url: "#" },
+            { name: "Blankets Creek Dirty 15/30", date: "2026-04-04", displayDate: "Apr 4, 2026", location: "Canton, GA", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "http://mountaingoatadventures.com" },
+            { name: "Sunny King Criterium", date: "2026-04-04", displayDate: "Apr 4-5, 2026", location: "Anniston, AL", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "https://annistoncycling.com" },
+            { name: "Pisgah Stage Race", date: "2026-04-07", displayDate: "Apr 7-11, 2026", location: "Brevard, NC", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "https://pisgahproductions.com" },
             { name: "Redlands Bicycle Classic", date: "2026-04-08", displayDate: "Apr 8-12, 2026", location: "Redlands, CA", region: "USA", theme: "Road", cost: "Spectator Free", url: "https://redlandsclassic.com" },
+            { name: "Florida Bicycle Safari", date: "2026-04-11", displayDate: "Apr 11-16, 2026", location: "Live Oak, FL", region: "North Florida", theme: "Road", cost: "$300+", url: "#" },
             { name: "Triada MTB Avrig", date: "2026-04-12", displayDate: "Apr 12, 2026", location: "Avrig, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "https://triadamtb.ro" },
+            { name: "Meltdown MTB Race", date: "2026-04-12", displayDate: "Apr 12, 2026", location: "Harris Lake, NC", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "#" },
             { name: "Sea Otter Classic", date: "2026-04-16", displayDate: "Apr 16-19, 2026", location: "Monterey, CA", region: "USA", theme: "Industry", cost: "Ticketed", url: "https://seaotterclassic.com" },
+            { name: "Athens Twilight Criterium", date: "2026-04-17", displayDate: "Apr 17-18, 2026", location: "Athens, GA", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "https://athenstwilight.com" },
             { name: "Barry-Roubaix", date: "2026-04-18", displayDate: "Apr 18, 2026", location: "Hastings, MI", region: "USA", theme: "Gravel", cost: "Waitlist Only", url: "https://barry-roubaix.com" },
+            { name: "Eagle Rock Easter Classic", date: "2026-04-18", displayDate: "Apr 18, 2026", location: "Rainbow City, AL", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "#" },
+            { name: "Bootlegger 100", date: "2026-04-18", displayDate: "Apr 18, 2026", location: "Lenoir, NC", region: "Southeast", theme: "Gravel", cost: "Entry Fee", url: "https://pisgahproductions.com" },
+            { name: "Hammock Hauler", date: "2026-04-19", displayDate: "Apr 19, 2026", location: "Alachua, FL", region: "North Florida", theme: "MTB", cost: "Entry Fee", url: "http://goneriding.com" },
+            { name: "Tour of Georgia Gran Fondo", date: "2026-04-19", displayDate: "Apr 19, 2026", location: "Helen, GA", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "https://granfondonationalseries.com" },
+            { name: "Reliance Deep Woods Gravel", date: "2026-04-24", displayDate: "Apr 24-26, 2026", location: "Reliance, TN", region: "Southeast", theme: "Gravel", cost: "Entry Fee", url: "https://tennesseegravel.com" },
             { name: "Levi's Gran Fondo", date: "2026-04-25", displayDate: "Apr 25, 2026", location: "Windsor, CA", region: "USA", theme: "Charity", cost: "Entry Fee", url: "https://levisgranfondo.com" },
+            { name: "Race at Lake Crabtree", date: "2026-04-26", displayDate: "Apr 26, 2026", location: "Morrisville, NC", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "#" },
+            { name: "6G2 Gravel", date: "2026-04-26", displayDate: "Apr 26, 2026", location: "Dahlonega, GA", region: "Southeast", theme: "Gravel", cost: "Entry Fee", url: "#" },
             { name: "Tour of the Gila", date: "2026-04-29", displayDate: "Apr 29 - May 3, 2026", location: "Silver City, NM", region: "USA", theme: "Road", cost: "UCI Race Fee", url: "https://tourofthegila.com" },
+            { name: "PMBAR Adventure Race", date: "2026-05-02", displayDate: "May 2, 2026", location: "Pisgah NF, NC", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "https://pisgahproductions.com" },
+            { name: "Bo Bikes Bama", date: "2026-05-02", displayDate: "May 2, 2026", location: "Auburn, AL", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "#" },
+            { name: "Fort Yargo 6/3 Hour", date: "2026-05-02", displayDate: "May 2, 2026", location: "Winder, GA", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "https://dirtyspokes.com" },
             { name: "Belgian Waffle Ride CA", date: "2026-05-02", displayDate: "May 2-3, 2026", location: "San Diego, CA", region: "USA", theme: "Gravel", cost: "Entry Fee", url: "https://belgianwaffleride.bike" },
+            { name: "FGG #5+TT", date: "2026-05-02", displayDate: "May 2-3, 2026", location: "Middleburg, FL", region: "North Florida", theme: "Gravel", cost: "Entry Fee", url: "http://goneriding.com" },
             { name: "L'Étape Las Vegas", date: "2026-05-03", displayDate: "May 3, 2026", location: "Las Vegas, NV", region: "USA", theme: "Charity", cost: "Entry Fee", url: "https://lasvegas.letapebytourdefrance.com/" },
+            { name: "FLE Final", date: "2026-05-04", displayDate: "May 4, 2026", location: "Brooksville, FL", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "http://goneriding.com" },
+            { name: "FGG #6", date: "2026-05-09", displayDate: "May 9, 2026", location: "Dade City, FL", region: "Southeast", theme: "Gravel", cost: "Entry Fee", url: "http://goneriding.com" },
+            { name: "Cheaha Challenge (UCI Qual.)", date: "2026-05-16", displayDate: "May 16-17, 2026", location: "Jacksonville, AL", region: "Southeast", theme: "Road", cost: "$65-100", url: "https://cheahachallenge.com" },
             { name: "Prima Evadare", date: "2026-05-17", displayDate: "May 17, 2026", location: "Bucharest, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "https://primaevadare.ro" },
             { name: "GFNY World Championship", date: "2026-05-17", displayDate: "May 17, 2026", location: "New York, NY", region: "USA", theme: "Road", cost: "Entry Fee", url: "https://gfny.com" },
+            { name: "Florida State Crit Champ", date: "2026-05-17", displayDate: "May 17, 2026", location: "West Palm Beach, FL", region: "Southeast", theme: "Road", cost: "~$50", url: "https://billbone.com" },
+            { name: "Assaults on Mt. Mitchell", date: "2026-05-18", displayDate: "May 18, 2026", location: "Spartanburg, SC", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "https://theassaults.com" },
+            { name: "Tour of North Georgia", date: "2026-05-29", displayDate: "May 29-31, 2026", location: "Clarksville, GA", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "http://topviewsports.com" },
             { name: "Unbound Gravel", date: "2026-05-30", displayDate: "May 28-31, 2026", location: "Emporia, KS", region: "USA", theme: "Gravel", cost: "Lottery (Nov '25)", url: "https://unboundgravel.com" },
+            { name: "Shake N Brake", date: "2026-05-31", displayDate: "May 31, 2026", location: "Piedmont, AL", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "#" },
 
-            // Q3 2026
+            // --- Q3 2026 ---
             { name: "Tulsa Tough", date: "2026-06-05", displayDate: "Jun 5-7, 2026", location: "Tulsa, OK", region: "USA", theme: "Road", cost: "Spectator Free", url: "https://tulsatough.com" },
             { name: "Bentonville Bike Fest", date: "2026-06-11", displayDate: "Jun 8-14, 2026", location: "Bentonville, AR", region: "USA", theme: "Industry", cost: "Free Admission", url: "https://bentonvillebikefest.com" },
             { name: "USA Cycling Pro Road Nats", date: "2026-06-17", displayDate: "Jun 17-21, 2026", location: "Charleston, WV", region: "USA", theme: "Road", cost: "Spectator Free", url: "https://usacycling.org" },
             { name: "SBT GRVL", date: "2026-06-26", displayDate: "Jun 26-28, 2026", location: "Steamboat Springs, CO", region: "USA", theme: "Gravel", cost: "Lottery (Oct '25)", url: "https://sbtgrvl.com" },
             { name: "Tour de France 2026", date: "2026-07-04", displayDate: "Jul 4-26, 2026", location: "Barcelona to Paris", region: "Europe", theme: "Road", cost: "Spectator Free", url: "https://www.letour.fr" },
             { name: "Sibiu Cycling Tour", date: "2026-07-04", displayDate: "Jul 4-7, 2026", location: "Sibiu, Romania", region: "Romania", theme: "Road", cost: "Spectator Free", url: "https://ciclism.sibiu.ro" },
+            { name: "24/12 Hours of Iron Maiden", date: "2026-07-05", displayDate: "Jul 5, 2026", location: "McCalla, AL", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "#" },
             { name: "Transfăgărăşan Challenge", date: "2026-07-06", displayDate: "Jul 6, 2026", location: "Cartisoara, Romania", region: "Romania", theme: "Road", cost: "Entry Fee", url: "https://t-challenge.ro" },
             { name: "Triple Bypass", date: "2026-07-11", displayDate: "Jul 11, 2026", location: "Evergreen, CO", region: "USA", theme: "Road", cost: "Entry Fee", url: "https://triplebypass.org" },
+            { name: "Georgia State Games", date: "2026-07-11", displayDate: "Jul 11-12, 2026", location: "White/Marietta, GA", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "https://georgiagames.org" },
             { name: "USA Cycling Endurance MTB Nats", date: "2026-07-15", displayDate: "Jul 15-19, 2026", location: "Roanoke, VA", region: "USA", theme: "MTB", cost: "Entry Fee", url: "https://usacycling.org" },
+            { name: "Gran Fondo Asheville", date: "2026-07-18", displayDate: "Jul 18-20, 2026", location: "Asheville, NC", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "https://granfondonationalseries.com" },
             { name: "RAGBRAI LIII", date: "2026-07-18", displayDate: "Jul 18-25, 2026", location: "Iowa (Statewide)", region: "USA", theme: "Charity", cost: "Registration", url: "https://ragbrai.com" },
             { name: "L'Étape du Tour de France", date: "2026-07-19", displayDate: "Jul 19, 2026", location: "Alpe d'Huez, France", region: "Europe", theme: "Charity", cost: "Entry Fee", url: "https://www.letapedutourdefrance.com" },
+            { name: "ORAMM (Off-Road Assault)", date: "2026-07-26", displayDate: "Jul 26, 2026", location: "Old Fort, NC", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "https://blueridgeadventures.net" },
             { name: "Carpathian MTB Epic", date: "2026-07-31", displayDate: "Jul 31 - Aug 3, 2026", location: "Fundata, Romania", region: "Romania", theme: "MTB", cost: "Race Fee", url: "https://carpathianmtb.ro" },
             { name: "Tour de France Femmes", date: "2026-08-01", displayDate: "Aug 1-9, 2026", location: "Switzerland to Nice", region: "Europe", theme: "Road", cost: "Spectator Free", url: "https://www.letourfemmes.fr" },
             { name: "Pan-Mass Challenge", date: "2026-08-01", displayDate: "Aug 1-2, 2026", location: "Massachusetts", region: "USA", theme: "Charity", cost: "Fundraising", url: "https://pmc.org" },
             { name: "Tour of Szeklerland", date: "2026-08-06", displayDate: "Aug 6-8, 2026", location: "Szeklerland, Romania", region: "Romania", theme: "Road", cost: "Spectator Free", url: "https://tusnadcyclingteam.com" },
+            { name: "The Knot @ Poinsett", date: "2026-08-08", displayDate: "Aug 8, 2026", location: "Wedgefield, SC", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "#" },
+            { name: "Old Fort Fifty", date: "2026-08-08", displayDate: "Aug 8, 2026", location: "Old Fort, NC", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "#" },
+            { name: "Pisgah Enduro", date: "2026-08-09", displayDate: "Aug 9-10, 2026", location: "Old Fort, NC", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "https://pisgahproductions.com" },
             { name: "Leadville Trail 100 MTB", date: "2026-08-15", displayDate: "Aug 15, 2026", location: "Leadville, CO", region: "USA", theme: "MTB", cost: "Lottery (Dec '25)", url: "https://leadvilleraceseries.com" },
             { name: "Outdoor Retailer Summer", date: "2026-08-19", displayDate: "Aug 19-21, 2026", location: "Minneapolis, MN", region: "USA", theme: "Industry", cost: "Trade Only", url: "https://outdoorretailer.com" },
             { name: "MADE Bike Show", date: "2026-08-21", displayDate: "Aug 21-23, 2026", location: "Portland, OR", region: "USA", theme: "Industry", cost: "Ticketed", url: "https://made.bike" },
             { name: "Alba Carolina Bike Race", date: "2026-08-23", displayDate: "Aug 23, 2026", location: "Alba Iulia, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "https://albacarolinabikerace.ro" },
+            { name: "The Cleveland Climb", date: "2026-08-29", displayDate: "Aug 29-30, 2026", location: "Cleveland, GA", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "#" },
             { name: "L'Etape Romania", date: "2026-08-30", displayDate: "Aug 30, 2026", location: "Bucharest, Romania", region: "Romania", theme: "Road", cost: "Entry Fee", url: "https://romania.letapebytourdefrance.com" },
 
-            // Q4 2026
+            // --- Q4 2026 ---
             { name: "Maryland Cycling Classic", date: "2026-09-05", displayDate: "Sep 5-6, 2026", location: "Baltimore, MD", region: "USA", theme: "Road", cost: "Spectator Free", url: "https://marylandcyclingclassic.us" },
             { name: "Turul României", date: "2026-09-09", displayDate: "Sep 9-13, 2026", location: "Romania (National)", region: "Romania", theme: "Road", cost: "Spectator Free", url: "https://turulromaniei.ro" },
             { name: "Rebecca's Private Idaho", date: "2026-09-12", displayDate: "Sep 12, 2026", location: "Ketchum, ID", region: "USA", theme: "Gravel", cost: "Entry Fee", url: "https://rebeccasprivateidaho.com" },
+            { name: "Fool's Gold MTB Race", date: "2026-09-12", displayDate: "Sep 12, 2026", location: "Dahlonega, GA", region: "Southeast", theme: "MTB", cost: "$100+", url: "http://mountaingoatadventures.com" },
+            { name: "Pisgah Monster-Cross", date: "2026-09-12", displayDate: "Sep 12, 2026", location: "Pisgah Forest, NC", region: "Southeast", theme: "Gravel", cost: "Entry Fee", url: "https://pisgahproductions.com" },
+            { name: "Dauset Dirt Dash", date: "2026-09-19", displayDate: "Sep 19-20, 2026", location: "Jackson, GA", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "#" },
+            { name: "Six Gap Century", date: "2026-09-26", displayDate: "Sep 26-27, 2026", location: "Dahlonega, GA", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "https://6gap.com" },
             { name: "UCI MTB World Cup Finals", date: "2026-10-02", displayDate: "Oct 2-4, 2026", location: "Lake Placid, NY", region: "USA", theme: "MTB", cost: "Ticketed", url: "https://lakeplacid.com" },
+            { name: "Pisgah 111", date: "2026-10-03", displayDate: "Oct 3, 2026", location: "Brevard, NC", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "https://pisgahproductions.com" },
+            { name: "Cycle Sequatchie Century", date: "2026-10-03", displayDate: "Oct 3, 2026", location: "Dunlap, TN", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "https://cyclesequatchie.com" },
+            { name: "Milledgeville Throwdown", date: "2026-10-03", displayDate: "Oct 3-4, 2026", location: "Milledgeville, GA", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "#" },
+            { name: "Gran Fondo Hincapie Greenville", date: "2026-10-16", displayDate: "Oct 16-17, 2026", location: "Travelers Rest, SC", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "https://hincapie.com" },
             { name: "Big Sugar Gravel", date: "2026-10-17", displayDate: "Oct 17, 2026", location: "Bentonville, AR", region: "USA", theme: "Gravel", cost: "Race Fee", url: "https://bigsugarclassic.com" },
+            { name: "Fonta Flora Barnburner", date: "2026-10-17", displayDate: "Oct 17, 2026", location: "Nebo, NC", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "#" },
+            { name: "Challenge at the Creek", date: "2026-10-17", displayDate: "Oct 17-18, 2026", location: "Acworth, GA", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "#" },
+            { name: "5th Annual MTB Fest", date: "2026-10-24", displayDate: "Oct 24-25, 2026", location: "Rome, GA", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "#" },
             { name: "El Tour de Tucson", date: "2026-11-21", displayDate: "Nov 21, 2026", location: "Tucson, AZ", region: "USA", theme: "Road", cost: "Race Fee", url: "https://eltourdetucson.org" },
+            { name: "Blankets Creek 3/6 Hour", date: "2026-11-21", displayDate: "Nov 21, 2026", location: "Canton, GA", region: "Southeast", theme: "MTB", cost: "Entry Fee", url: "http://mountaingoatadventures.com" },
+            { name: "Horrible Hundred", date: "2026-11-22", displayDate: "Nov 2026", location: "Clermont, FL", region: "Southeast", theme: "Road", cost: "Entry Fee", url: "https://horrible-hundred.com" },
 
-            // 2027 Projections
+            // --- 2027 Projections ---
             { name: "CABDA East", date: "2027-01-15", displayDate: "Jan 2027 (TBD)", location: "Northeast USA", region: "USA", theme: "Industry", cost: "Free (Retailers)", url: "https://cabdashow.com" },
             { name: "Bicycle Leadership Conf.", date: "2027-03-15", displayDate: "Mar 2027 (TBD)", location: "Dana Point, CA", region: "USA", theme: "Industry", cost: "Conf. Fee", url: "https://bicycleleadershipconference.org" },
             { name: "Sea Otter Classic", date: "2027-04-15", displayDate: "Apr 15-18, 2027", location: "Monterey, CA", region: "USA", theme: "Industry", cost: "Ticketed", url: "https://seaotterclassic.com" },
@@ -269,7 +349,7 @@
 
                 // Region Flag
                 let flag = "🌐";
-                if (event.region === "USA") flag = "🇺🇸";
+                if (event.region === "USA" || event.region === "North Florida" || event.region === "Southeast") flag = "🇺🇸";
                 else if (event.region === "Romania") flag = "🇷🇴";
                 else if (event.region === "Europe") flag = "🇪🇺";
 
@@ -299,7 +379,17 @@
                                       e.location.toLowerCase().includes(search) || 
                                       e.displayDate.toLowerCase().includes(search);
                 
-                const matchesRegion = region === "all" || e.region === region;
+                // Enhanced Region Logic for hierarchies
+                let matchesRegion = region === "all" || e.region === region;
+                if (region === "USA") {
+                    // USA filter includes USA, North Florida, and Southeast
+                    matchesRegion = e.region === "USA" || e.region === "North Florida" || e.region === "Southeast";
+                }
+                if (region === "Southeast") {
+                    // Southeast filter includes North Florida
+                    matchesRegion = e.region === "Southeast" || e.region === "North Florida";
+                }
+
                 const matchesTheme = theme === "all" || e.theme.includes(theme);
 
                 return matchesSearch && matchesRegion && matchesTheme;
