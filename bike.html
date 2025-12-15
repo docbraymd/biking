@@ -78,6 +78,7 @@
         .theme-industry { background-color: #8e44ad; color: white; } /* Purple */
         .theme-charity { background-color: #c0392b; color: white; }  /* Red */
         .theme-fest { background-color: #f39c12; color: white; }     /* Yellow/Orange */
+        .theme-edu { background-color: #16a085; color: white; }      /* Teal */
 
         /* Interactive Elements */
         .btn-visit {
@@ -106,7 +107,7 @@
     <div class="header-banner">
         <div class="container">
             <h1 class="fw-bold"><i class="fa-solid fa-bicycle me-3"></i>Strategic Cycling Calendar</h1>
-            <p class="lead mb-0 opacity-90">Operational Roadmap: USA & Romania (Dec 2025 – June 2027)</p>
+            <p class="lead mb-0 opacity-90">Operational Roadmap: USA, Romania & Key International Events (2025 – 2027)</p>
         </div>
     </div>
 
@@ -127,6 +128,7 @@
                         <option value="all">All Regions</option>
                         <option value="USA">🇺🇸 United States</option>
                         <option value="Romania">🇷🇴 Romania</option>
+                        <option value="Europe">🇪🇺 Europe / International</option>
                     </select>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -138,6 +140,7 @@
                         <option value="Road">Road Racing</option>
                         <option value="MTB">Mountain Bike</option>
                         <option value="Charity">Charity / Fondo</option>
+                        <option value="Education">Education / Clinic</option>
                     </select>
                 </div>
             </div>
@@ -183,7 +186,7 @@
             { name: "Old Man Winter Rally", date: "2026-02-01", displayDate: "Feb 1, 2026", location: "Lyons, CO", region: "USA", theme: "Gravel", cost: "Entry Fee", url: "https://oldmanwinterrally.com" },
             { name: "CABDA Midwest", date: "2026-02-04", displayDate: "Feb 4-5, 2026", location: "Schaumburg, IL", region: "USA", theme: "Industry", cost: "Free (Retailers)", url: "https://cabdashow.com" },
             { name: "Tour de Palm Springs", date: "2026-02-07", displayDate: "Feb 7, 2026", location: "Palm Springs, CA", region: "USA", theme: "Charity", cost: "Entry Fee", url: "https://tourdepalmsprings.com" },
-            { name: "Valley of the Sun Stage Race", date: "2026-02-13", displayDate: "Feb 13-15, 2026", location: "Phoenix, AZ", region: "USA", theme: "Road", cost: "Race Fee", url: "#" },
+            { name: "Valley of the Sun Stage Race", date: "2026-02-13", displayDate: "Feb 13-15, 2026", location: "Phoenix, AZ", region: "USA", theme: "Road", cost: "Race Fee", url: "http://valleyofthesunbikerace.com/" },
             { name: "Belgian Waffle Ride AZ", date: "2026-02-27", displayDate: "Feb 27-28, 2026", location: "Phoenix, AZ", region: "USA", theme: "Gravel", cost: "Race Fee", url: "https://belgianwaffleride.bike" },
             { name: "Send It South", date: "2026-02-27", displayDate: "Feb 27-28, 2026", location: "Bentonville, AR", region: "USA", theme: "MTB", cost: "$75", url: "https://themomentary.org" },
 
@@ -192,18 +195,20 @@
             { name: "Philly Bike Expo", date: "2026-03-14", displayDate: "Mar 14-15, 2026", location: "Philadelphia, PA", region: "USA", theme: "Industry", cost: "$25 - $35", url: "https://phillybikeexpo.com" },
             { name: "Bicycle Leadership Conference", date: "2026-03-17", displayDate: "Mar 17-19, 2026", location: "Dana Point, CA", region: "USA", theme: "Industry", cost: "$1,900+", url: "https://bicycleleadershipconference.org" },
             { name: "CABDA West", date: "2026-03-18", displayDate: "Mar 18-19, 2026", location: "Las Vegas, NV", region: "USA", theme: "Industry", cost: "Free (Retailers)", url: "https://cabdashow.com" },
+            { name: "USA Cycling Mechanics Clinic", date: "2026-03-20", displayDate: "Mar 20-24, 2026", location: "Bentonville, AR", region: "USA", theme: "Education", cost: "$599", url: "https://usacycling.org/mechanics/clinic" },
             { name: "National Bike Summit", date: "2026-03-24", displayDate: "Mar 24-26, 2026", location: "Washington, DC", region: "USA", theme: "Industry", cost: "Registration Req", url: "https://bikeleague.org" },
-            { name: "Salonul Bicicletei", date: "2026-03-31", displayDate: "Late Mar 2026", location: "Bucharest, Romania", region: "Romania", theme: "Industry", cost: "Ticketed", url: "#" },
+            { name: "Salonul Bicicletei", date: "2026-03-31", displayDate: "Late Mar 2026", location: "Bucharest, Romania", region: "Romania", theme: "Industry", cost: "Ticketed", url: "https://www.facebook.com/salonulbicicletei/" },
 
             // Q2 2026
             { name: "Ziua B", date: "2026-04-04", displayDate: "Apr 4, 2026", location: "Bucharest, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "https://ridersclub.ro" },
             { name: "Redlands Bicycle Classic", date: "2026-04-08", displayDate: "Apr 8-12, 2026", location: "Redlands, CA", region: "USA", theme: "Road", cost: "Spectator Free", url: "https://redlandsclassic.com" },
-            { name: "Triada MTB Avrig", date: "2026-04-12", displayDate: "Apr 12, 2026", location: "Avrig, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "#" },
+            { name: "Triada MTB Avrig", date: "2026-04-12", displayDate: "Apr 12, 2026", location: "Avrig, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "https://triadamtb.ro" },
             { name: "Sea Otter Classic", date: "2026-04-16", displayDate: "Apr 16-19, 2026", location: "Monterey, CA", region: "USA", theme: "Industry", cost: "Ticketed", url: "https://seaotterclassic.com" },
             { name: "Barry-Roubaix", date: "2026-04-18", displayDate: "Apr 18, 2026", location: "Hastings, MI", region: "USA", theme: "Gravel", cost: "Waitlist Only", url: "https://barry-roubaix.com" },
             { name: "Levi's Gran Fondo", date: "2026-04-25", displayDate: "Apr 25, 2026", location: "Windsor, CA", region: "USA", theme: "Charity", cost: "Entry Fee", url: "https://levisgranfondo.com" },
             { name: "Tour of the Gila", date: "2026-04-29", displayDate: "Apr 29 - May 3, 2026", location: "Silver City, NM", region: "USA", theme: "Road", cost: "UCI Race Fee", url: "https://tourofthegila.com" },
             { name: "Belgian Waffle Ride CA", date: "2026-05-02", displayDate: "May 2-3, 2026", location: "San Diego, CA", region: "USA", theme: "Gravel", cost: "Entry Fee", url: "https://belgianwaffleride.bike" },
+            { name: "L'Étape Las Vegas", date: "2026-05-03", displayDate: "May 3, 2026", location: "Las Vegas, NV", region: "USA", theme: "Charity", cost: "Entry Fee", url: "https://lasvegas.letapebytourdefrance.com/" },
             { name: "Prima Evadare", date: "2026-05-17", displayDate: "May 17, 2026", location: "Bucharest, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "https://primaevadare.ro" },
             { name: "GFNY World Championship", date: "2026-05-17", displayDate: "May 17, 2026", location: "New York, NY", region: "USA", theme: "Road", cost: "Entry Fee", url: "https://gfny.com" },
             { name: "Unbound Gravel", date: "2026-05-30", displayDate: "May 28-31, 2026", location: "Emporia, KS", region: "USA", theme: "Gravel", cost: "Lottery (Nov '25)", url: "https://unboundgravel.com" },
@@ -213,18 +218,21 @@
             { name: "Bentonville Bike Fest", date: "2026-06-11", displayDate: "Jun 8-14, 2026", location: "Bentonville, AR", region: "USA", theme: "Industry", cost: "Free Admission", url: "https://bentonvillebikefest.com" },
             { name: "USA Cycling Pro Road Nats", date: "2026-06-17", displayDate: "Jun 17-21, 2026", location: "Charleston, WV", region: "USA", theme: "Road", cost: "Spectator Free", url: "https://usacycling.org" },
             { name: "SBT GRVL", date: "2026-06-26", displayDate: "Jun 26-28, 2026", location: "Steamboat Springs, CO", region: "USA", theme: "Gravel", cost: "Lottery (Oct '25)", url: "https://sbtgrvl.com" },
+            { name: "Tour de France 2026", date: "2026-07-04", displayDate: "Jul 4-26, 2026", location: "Barcelona to Paris", region: "Europe", theme: "Road", cost: "Spectator Free", url: "https://www.letour.fr" },
             { name: "Sibiu Cycling Tour", date: "2026-07-04", displayDate: "Jul 4-7, 2026", location: "Sibiu, Romania", region: "Romania", theme: "Road", cost: "Spectator Free", url: "https://ciclism.sibiu.ro" },
             { name: "Transfăgărăşan Challenge", date: "2026-07-06", displayDate: "Jul 6, 2026", location: "Cartisoara, Romania", region: "Romania", theme: "Road", cost: "Entry Fee", url: "https://t-challenge.ro" },
             { name: "Triple Bypass", date: "2026-07-11", displayDate: "Jul 11, 2026", location: "Evergreen, CO", region: "USA", theme: "Road", cost: "Entry Fee", url: "https://triplebypass.org" },
             { name: "USA Cycling Endurance MTB Nats", date: "2026-07-15", displayDate: "Jul 15-19, 2026", location: "Roanoke, VA", region: "USA", theme: "MTB", cost: "Entry Fee", url: "https://usacycling.org" },
             { name: "RAGBRAI LIII", date: "2026-07-18", displayDate: "Jul 18-25, 2026", location: "Iowa (Statewide)", region: "USA", theme: "Charity", cost: "Registration", url: "https://ragbrai.com" },
+            { name: "L'Étape du Tour de France", date: "2026-07-19", displayDate: "Jul 19, 2026", location: "Alpe d'Huez, France", region: "Europe", theme: "Charity", cost: "Entry Fee", url: "https://www.letapedutourdefrance.com" },
             { name: "Carpathian MTB Epic", date: "2026-07-31", displayDate: "Jul 31 - Aug 3, 2026", location: "Fundata, Romania", region: "Romania", theme: "MTB", cost: "Race Fee", url: "https://carpathianmtb.ro" },
+            { name: "Tour de France Femmes", date: "2026-08-01", displayDate: "Aug 1-9, 2026", location: "Switzerland to Nice", region: "Europe", theme: "Road", cost: "Spectator Free", url: "https://www.letourfemmes.fr" },
             { name: "Pan-Mass Challenge", date: "2026-08-01", displayDate: "Aug 1-2, 2026", location: "Massachusetts", region: "USA", theme: "Charity", cost: "Fundraising", url: "https://pmc.org" },
-            { name: "Tour of Szeklerland", date: "2026-08-06", displayDate: "Aug 6-8, 2026", location: "Szeklerland, Romania", region: "Romania", theme: "Road", cost: "Spectator Free", url: "#" },
+            { name: "Tour of Szeklerland", date: "2026-08-06", displayDate: "Aug 6-8, 2026", location: "Szeklerland, Romania", region: "Romania", theme: "Road", cost: "Spectator Free", url: "https://tusnadcyclingteam.com" },
             { name: "Leadville Trail 100 MTB", date: "2026-08-15", displayDate: "Aug 15, 2026", location: "Leadville, CO", region: "USA", theme: "MTB", cost: "Lottery (Dec '25)", url: "https://leadvilleraceseries.com" },
             { name: "Outdoor Retailer Summer", date: "2026-08-19", displayDate: "Aug 19-21, 2026", location: "Minneapolis, MN", region: "USA", theme: "Industry", cost: "Trade Only", url: "https://outdoorretailer.com" },
             { name: "MADE Bike Show", date: "2026-08-21", displayDate: "Aug 21-23, 2026", location: "Portland, OR", region: "USA", theme: "Industry", cost: "Ticketed", url: "https://made.bike" },
-            { name: "Alba Carolina Bike Race", date: "2026-08-23", displayDate: "Aug 23, 2026", location: "Alba Iulia, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "#" },
+            { name: "Alba Carolina Bike Race", date: "2026-08-23", displayDate: "Aug 23, 2026", location: "Alba Iulia, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "https://albacarolinabikerace.ro" },
             { name: "L'Etape Romania", date: "2026-08-30", displayDate: "Aug 30, 2026", location: "Bucharest, Romania", region: "Romania", theme: "Road", cost: "Entry Fee", url: "https://romania.letapebytourdefrance.com" },
 
             // Q4 2026
@@ -257,9 +265,13 @@
                 else if (t.includes("industry")) badgeClass = "theme-industry";
                 else if (t.includes("charity")) badgeClass = "theme-charity";
                 else if (t.includes("festival")) badgeClass = "theme-fest";
+                else if (t.includes("education")) badgeClass = "theme-edu";
 
                 // Region Flag
-                const flag = event.region === "USA" ? "🇺🇸" : "🇷🇴";
+                let flag = "🌐";
+                if (event.region === "USA") flag = "🇺🇸";
+                else if (event.region === "Romania") flag = "🇷🇴";
+                else if (event.region === "Europe") flag = "🇪🇺";
 
                 const row = `
                     <tr>
