@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Bicycle Industry Event Calendar (2025-2027)</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-bg: #f8f9fa;
+            --header-grad-start: #2c3e50;
+            --header-grad-end: #34495e;
+            --accent-color: #3498db;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--primary-bg);
+            color: #333;
+        }
+
+        /* Header Styling */
+        .header-banner {
+            background: linear-gradient(135deg, var(--header-grad-start), var(--header-grad-end));
+            color: white;
+            padding: 2.5rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Card Controls */
+        .card-controls {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            background: white;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styling */
+        .table-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .table thead {
+            background-color: #e9ecef;
+            color: #495057;
+        }
+
+        .table th {
+            font-weight: 600;
+            cursor: pointer;
+            padding: 1rem;
+            white-space: nowrap;
+            user-select: none;
+        }
+
+        .table th:hover {
+            background-color: #dee2e6;
+        }
+
+        .table td {
+            vertical-align: middle;
+            padding: 0.85rem 1rem;
+        }
+
+        /* Theme Badges */
+        .badge-theme { font-weight: 500; font-size: 0.8rem; padding: 6px 10px; }
+        .theme-gravel { background-color: #d35400; color: white; }   /* Burnt Orange */
+        .theme-road { background-color: #2980b9; color: white; }     /* Blue */
+        .theme-mtb { background-color: #27ae60; color: white; }      /* Green */
+        .theme-industry { background-color: #8e44ad; color: white; } /* Purple */
+        .theme-charity { background-color: #c0392b; color: white; }  /* Red */
+        .theme-fest { background-color: #f39c12; color: white; }     /* Yellow/Orange */
+
+        /* Interactive Elements */
+        .btn-visit {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .btn-visit:hover { text-decoration: underline; color: #1d6fa5; }
+        
+        .flag { display: inline-block; width: 1.5em; text-align: center; margin-right: 5px; }
+
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6c757d;
+            padding-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <div class="container">
+            <h1 class="fw-bold"><i class="fa-solid fa-bicycle me-3"></i>Strategic Cycling Calendar</h1>
+            <p class="lead mb-0 opacity-90">Operational Roadmap: USA & Romania (Dec 2025 – June 2027)</p>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="card card-controls p-4">
+            <div class="row g-3">
+                <div class="col-lg-5 col-md-12">
+                    <label class="form-label fw-bold text-secondary small">SEARCH EVENTS</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0"><i class="fa-solid fa-search text-muted"></i></span>
+                        <input type="text" id="searchInput" class="form-control border-start-0" placeholder="Search by name, location, or keyword..." onkeyup="filterEvents()">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <label class="form-label fw-bold text-secondary small">REGION</label>
+                    <select id="regionFilter" class="form-select" onchange="filterEvents()">
+                        <option value="all">All Regions</option>
+                        <option value="USA">🇺🇸 United States</option>
+                        <option value="Romania">🇷🇴 Romania</option>
+                    </select>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <label class="form-label fw-bold text-secondary small">THEME</label>
+                    <select id="themeFilter" class="form-select" onchange="filterEvents()">
+                        <option value="all">All Themes</option>
+                        <option value="Industry">Industry / Trade</option>
+                        <option value="Gravel">Gravel</option>
+                        <option value="Road">Road Racing</option>
+                        <option value="MTB">Mountain Bike</option>
+                        <option value="Charity">Charity / Fondo</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0" id="eventsTable">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable('date')">Date <i class="fa-solid fa-sort small ms-1 opacity-50"></i></th>
+                            <th onclick="sortTable('name')">Event Name <i class="fa-solid fa-sort small ms-1 opacity-50"></i></th>
+                            <th onclick="sortTable('location')">Location <i class="fa-solid fa-sort small ms-1 opacity-50"></i></th>
+                            <th onclick="sortTable('theme')">Theme <i class="fa-solid fa-sort small ms-1 opacity-50"></i></th>
+                            <th>Cost / Entry</th>
+                            <th>Website</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        </tbody>
+                </table>
+            </div>
+            <div class="p-3 border-top bg-light text-end text-muted small">
+                Showing <strong id="visibleCount">0</strong> events
+            </div>
+        </div>
+
+        <footer>
+            <p>Data compiled from Strategic Horizon Analysis (Dec 15, 2025).<br>
+            <em>Dates for late 2026/2027 are projected based on historical patterns where confirmed data is unavailable.</em></p>
+        </footer>
+    </div>
+
+    <script>
+        // Consolidated Event Database
+        const eventsDB = [
+            // 2025 Late
+            { name: "Best Buddies Challenge: Malibu", date: "2025-12-02", displayDate: "Dec 2-6, 2025", location: "Malibu, CA", region: "USA", theme: "Charity", cost: "Fundraising", url: "https://bestbuddieschallenge.org" },
+
+            // 2026 Q1
+            { name: "CES 2026", date: "2026-01-06", displayDate: "Jan 6-9, 2026", location: "Las Vegas, NV", region: "USA", theme: "Industry", cost: "Trade Only", url: "https://ces.tech" },
+            { name: "Romanian CX Nationals", date: "2026-01-11", displayDate: "Jan 11, 2026", location: "Floresti, Romania", region: "Romania", theme: "Road", cost: "Spectator Free", url: "https://federatiadeciclism.ro" },
+            { name: "Old Man Winter Rally", date: "2026-02-01", displayDate: "Feb 1, 2026", location: "Lyons, CO", region: "USA", theme: "Gravel", cost: "Entry Fee", url: "https://oldmanwinterrally.com" },
+            { name: "CABDA Midwest", date: "2026-02-04", displayDate: "Feb 4-5, 2026", location: "Schaumburg, IL", region: "USA", theme: "Industry", cost: "Free (Retailers)", url: "https://cabdashow.com" },
+            { name: "Tour de Palm Springs", date: "2026-02-07", displayDate: "Feb 7, 2026", location: "Palm Springs, CA", region: "USA", theme: "Charity", cost: "Entry Fee", url: "https://tourdepalmsprings.com" },
+            { name: "Valley of the Sun Stage Race", date: "2026-02-13", displayDate: "Feb 13-15, 2026", location: "Phoenix, AZ", region: "USA", theme: "Road", cost: "Race Fee", url: "#" },
+            { name: "Belgian Waffle Ride AZ", date: "2026-02-27", displayDate: "Feb 27-28, 2026", location: "Phoenix, AZ", region: "USA", theme: "Gravel", cost: "Race Fee", url: "https://belgianwaffleride.bike" },
+            { name: "Send It South", date: "2026-02-27", displayDate: "Feb 27-28, 2026", location: "Bentonville, AR", region: "USA", theme: "MTB", cost: "$75", url: "https://themomentary.org" },
+
+            // March 2026
+            { name: "The Mid South", date: "2026-03-13", displayDate: "Mar 13-14, 2026", location: "Stillwater, OK", region: "USA", theme: "Gravel", cost: "Race Fee", url: "https://midsouthgravel.com" },
+            { name: "Philly Bike Expo", date: "2026-03-14", displayDate: "Mar 14-15, 2026", location: "Philadelphia, PA", region: "USA", theme: "Industry", cost: "$25 - $35", url: "https://phillybikeexpo.com" },
+            { name: "Bicycle Leadership Conference", date: "2026-03-17", displayDate: "Mar 17-19, 2026", location: "Dana Point, CA", region: "USA", theme: "Industry", cost: "$1,900+", url: "https://bicycleleadershipconference.org" },
+            { name: "CABDA West", date: "2026-03-18", displayDate: "Mar 18-19, 2026", location: "Las Vegas, NV", region: "USA", theme: "Industry", cost: "Free (Retailers)", url: "https://cabdashow.com" },
+            { name: "National Bike Summit", date: "2026-03-24", displayDate: "Mar 24-26, 2026", location: "Washington, DC", region: "USA", theme: "Industry", cost: "Registration Req", url: "https://bikeleague.org" },
+            { name: "Salonul Bicicletei", date: "2026-03-31", displayDate: "Late Mar 2026", location: "Bucharest, Romania", region: "Romania", theme: "Industry", cost: "Ticketed", url: "#" },
+
+            // Q2 2026
+            { name: "Ziua B", date: "2026-04-04", displayDate: "Apr 4, 2026", location: "Bucharest, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "https://ridersclub.ro" },
+            { name: "Redlands Bicycle Classic", date: "2026-04-08", displayDate: "Apr 8-12, 2026", location: "Redlands, CA", region: "USA", theme: "Road", cost: "Spectator Free", url: "https://redlandsclassic.com" },
+            { name: "Triada MTB Avrig", date: "2026-04-12", displayDate: "Apr 12, 2026", location: "Avrig, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "#" },
+            { name: "Sea Otter Classic", date: "2026-04-16", displayDate: "Apr 16-19, 2026", location: "Monterey, CA", region: "USA", theme: "Industry", cost: "Ticketed", url: "https://seaotterclassic.com" },
+            { name: "Barry-Roubaix", date: "2026-04-18", displayDate: "Apr 18, 2026", location: "Hastings, MI", region: "USA", theme: "Gravel", cost: "Waitlist Only", url: "https://barry-roubaix.com" },
+            { name: "Levi's Gran Fondo", date: "2026-04-25", displayDate: "Apr 25, 2026", location: "Windsor, CA", region: "USA", theme: "Charity", cost: "Entry Fee", url: "https://levisgranfondo.com" },
+            { name: "Tour of the Gila", date: "2026-04-29", displayDate: "Apr 29 - May 3, 2026", location: "Silver City, NM", region: "USA", theme: "Road", cost: "UCI Race Fee", url: "https://tourofthegila.com" },
+            { name: "Belgian Waffle Ride CA", date: "2026-05-02", displayDate: "May 2-3, 2026", location: "San Diego, CA", region: "USA", theme: "Gravel", cost: "Entry Fee", url: "https://belgianwaffleride.bike" },
+            { name: "Prima Evadare", date: "2026-05-17", displayDate: "May 17, 2026", location: "Bucharest, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "https://primaevadare.ro" },
+            { name: "GFNY World Championship", date: "2026-05-17", displayDate: "May 17, 2026", location: "New York, NY", region: "USA", theme: "Road", cost: "Entry Fee", url: "https://gfny.com" },
+            { name: "Unbound Gravel", date: "2026-05-30", displayDate: "May 28-31, 2026", location: "Emporia, KS", region: "USA", theme: "Gravel", cost: "Lottery (Nov '25)", url: "https://unboundgravel.com" },
+
+            // Q3 2026
+            { name: "Tulsa Tough", date: "2026-06-05", displayDate: "Jun 5-7, 2026", location: "Tulsa, OK", region: "USA", theme: "Road", cost: "Spectator Free", url: "https://tulsatough.com" },
+            { name: "Bentonville Bike Fest", date: "2026-06-11", displayDate: "Jun 8-14, 2026", location: "Bentonville, AR", region: "USA", theme: "Industry", cost: "Free Admission", url: "https://bentonvillebikefest.com" },
+            { name: "USA Cycling Pro Road Nats", date: "2026-06-17", displayDate: "Jun 17-21, 2026", location: "Charleston, WV", region: "USA", theme: "Road", cost: "Spectator Free", url: "https://usacycling.org" },
+            { name: "SBT GRVL", date: "2026-06-26", displayDate: "Jun 26-28, 2026", location: "Steamboat Springs, CO", region: "USA", theme: "Gravel", cost: "Lottery (Oct '25)", url: "https://sbtgrvl.com" },
+            { name: "Sibiu Cycling Tour", date: "2026-07-04", displayDate: "Jul 4-7, 2026", location: "Sibiu, Romania", region: "Romania", theme: "Road", cost: "Spectator Free", url: "https://ciclism.sibiu.ro" },
+            { name: "Transfăgărăşan Challenge", date: "2026-07-06", displayDate: "Jul 6, 2026", location: "Cartisoara, Romania", region: "Romania", theme: "Road", cost: "Entry Fee", url: "https://t-challenge.ro" },
+            { name: "Triple Bypass", date: "2026-07-11", displayDate: "Jul 11, 2026", location: "Evergreen, CO", region: "USA", theme: "Road", cost: "Entry Fee", url: "https://triplebypass.org" },
+            { name: "USA Cycling Endurance MTB Nats", date: "2026-07-15", displayDate: "Jul 15-19, 2026", location: "Roanoke, VA", region: "USA", theme: "MTB", cost: "Entry Fee", url: "https://usacycling.org" },
+            { name: "RAGBRAI LIII", date: "2026-07-18", displayDate: "Jul 18-25, 2026", location: "Iowa (Statewide)", region: "USA", theme: "Charity", cost: "Registration", url: "https://ragbrai.com" },
+            { name: "Carpathian MTB Epic", date: "2026-07-31", displayDate: "Jul 31 - Aug 3, 2026", location: "Fundata, Romania", region: "Romania", theme: "MTB", cost: "Race Fee", url: "https://carpathianmtb.ro" },
+            { name: "Pan-Mass Challenge", date: "2026-08-01", displayDate: "Aug 1-2, 2026", location: "Massachusetts", region: "USA", theme: "Charity", cost: "Fundraising", url: "https://pmc.org" },
+            { name: "Tour of Szeklerland", date: "2026-08-06", displayDate: "Aug 6-8, 2026", location: "Szeklerland, Romania", region: "Romania", theme: "Road", cost: "Spectator Free", url: "#" },
+            { name: "Leadville Trail 100 MTB", date: "2026-08-15", displayDate: "Aug 15, 2026", location: "Leadville, CO", region: "USA", theme: "MTB", cost: "Lottery (Dec '25)", url: "https://leadvilleraceseries.com" },
+            { name: "Outdoor Retailer Summer", date: "2026-08-19", displayDate: "Aug 19-21, 2026", location: "Minneapolis, MN", region: "USA", theme: "Industry", cost: "Trade Only", url: "https://outdoorretailer.com" },
+            { name: "MADE Bike Show", date: "2026-08-21", displayDate: "Aug 21-23, 2026", location: "Portland, OR", region: "USA", theme: "Industry", cost: "Ticketed", url: "https://made.bike" },
+            { name: "Alba Carolina Bike Race", date: "2026-08-23", displayDate: "Aug 23, 2026", location: "Alba Iulia, Romania", region: "Romania", theme: "MTB", cost: "Entry Fee", url: "#" },
+            { name: "L'Etape Romania", date: "2026-08-30", displayDate: "Aug 30, 2026", location: "Bucharest, Romania", region: "Romania", theme: "Road", cost: "Entry Fee", url: "https://romania.letapebytourdefrance.com" },
+
+            // Q4 2026
+            { name: "Maryland Cycling Classic", date: "2026-09-05", displayDate: "Sep 5-6, 2026", location: "Baltimore, MD", region: "USA", theme: "Road", cost: "Spectator Free", url: "https://marylandcyclingclassic.us" },
+            { name: "Turul României", date: "2026-09-09", displayDate: "Sep 9-13, 2026", location: "Romania (National)", region: "Romania", theme: "Road", cost: "Spectator Free", url: "https://turulromaniei.ro" },
+            { name: "Rebecca's Private Idaho", date: "2026-09-12", displayDate: "Sep 12, 2026", location: "Ketchum, ID", region: "USA", theme: "Gravel", cost: "Entry Fee", url: "https://rebeccasprivateidaho.com" },
+            { name: "UCI MTB World Cup Finals", date: "2026-10-02", displayDate: "Oct 2-4, 2026", location: "Lake Placid, NY", region: "USA", theme: "MTB", cost: "Ticketed", url: "https://lakeplacid.com" },
+            { name: "Big Sugar Gravel", date: "2026-10-17", displayDate: "Oct 17, 2026", location: "Bentonville, AR", region: "USA", theme: "Gravel", cost: "Race Fee", url: "https://bigsugarclassic.com" },
+            { name: "El Tour de Tucson", date: "2026-11-21", displayDate: "Nov 21, 2026", location: "Tucson, AZ", region: "USA", theme: "Road", cost: "Race Fee", url: "https://eltourdetucson.org" },
+
+            // 2027 Projections
+            { name: "CABDA East", date: "2027-01-15", displayDate: "Jan 2027 (TBD)", location: "Northeast USA", region: "USA", theme: "Industry", cost: "Free (Retailers)", url: "https://cabdashow.com" },
+            { name: "Bicycle Leadership Conf.", date: "2027-03-15", displayDate: "Mar 2027 (TBD)", location: "Dana Point, CA", region: "USA", theme: "Industry", cost: "Conf. Fee", url: "https://bicycleleadershipconference.org" },
+            { name: "Sea Otter Classic", date: "2027-04-15", displayDate: "Apr 15-18, 2027", location: "Monterey, CA", region: "USA", theme: "Industry", cost: "Ticketed", url: "https://seaotterclassic.com" },
+            { name: "Unbound Gravel", date: "2027-06-03", displayDate: "Jun 3-6, 2027 (Est)", location: "Emporia, KS", region: "USA", theme: "Gravel", cost: "Lottery", url: "https://unboundgravel.com" }
+        ];
+
+        // Rendering Logic
+        function renderTable(data) {
+            const tbody = document.getElementById("tableBody");
+            tbody.innerHTML = "";
+            
+            data.forEach(event => {
+                // Determine Badge Color
+                let badgeClass = "bg-secondary";
+                const t = event.theme.toLowerCase();
+                if (t.includes("gravel")) badgeClass = "theme-gravel";
+                else if (t.includes("road")) badgeClass = "theme-road";
+                else if (t.includes("mtb")) badgeClass = "theme-mtb";
+                else if (t.includes("industry")) badgeClass = "theme-industry";
+                else if (t.includes("charity")) badgeClass = "theme-charity";
+                else if (t.includes("festival")) badgeClass = "theme-fest";
+
+                // Region Flag
+                const flag = event.region === "USA" ? "🇺🇸" : "🇷🇴";
+
+                const row = `
+                    <tr>
+                        <td data-sort="${event.date}">${event.displayDate}</td>
+                        <td class="fw-bold text-dark">${event.name}</td>
+                        <td><span class="flag">${flag}</span>${event.location}</td>
+                        <td><span class="badge badge-theme ${badgeClass}">${event.theme}</span></td>
+                        <td>${event.cost}</td>
+                        <td><a href="${event.url}" target="_blank" class="btn-visit"><i class="fa-solid fa-arrow-up-right-from-square small"></i> Visit</a></td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+            document.getElementById("visibleCount").textContent = data.length;
+        }
+
+        // Filter Logic
+        function filterEvents() {
+            const search = document.getElementById("searchInput").value.toLowerCase();
+            const region = document.getElementById("regionFilter").value;
+            const theme = document.getElementById("themeFilter").value;
+
+            const filtered = eventsDB.filter(e => {
+                const matchesSearch = e.name.toLowerCase().includes(search) || 
+                                      e.location.toLowerCase().includes(search) || 
+                                      e.displayDate.toLowerCase().includes(search);
+                
+                const matchesRegion = region === "all" || e.region === region;
+                const matchesTheme = theme === "all" || e.theme.includes(theme);
+
+                return matchesSearch && matchesRegion && matchesTheme;
+            });
+
+            renderTable(filtered);
+        }
+
+        // Sorting Logic
+        let sortDir = 1; 
+        function sortTable(key) {
+            eventsDB.sort((a, b) => {
+                const valA = a[key].toLowerCase();
+                const valB = b[key].toLowerCase();
+                return valA < valB ? -1 * sortDir : 1 * sortDir;
+            });
+            sortDir *= -1; // Toggle direction
+            filterEvents(); // Re-render
+        }
+
+        // Initialization
+        document.addEventListener("DOMContentLoaded", () => {
+            renderTable(eventsDB);
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
